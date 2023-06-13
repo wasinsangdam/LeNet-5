@@ -1,8 +1,15 @@
 #include "../inc/layer.h"
 
-void read_input(input_t* input, stream_input &input_stream) {
+void read_input(stream_axis &input, stream_input &input_stream) {
+
+    axis_t temp_axis;
+    input_t temp_input;
+
     for (int i = 0 ; i < IMAGE_SIZE; i++) {
-        input_stream.write(input[i]);
+        temp_axis = input.read();
+        temp_input.range() = temp_axis.data.range();
+
+        input_stream.write(temp_input);
     }
 }
 
@@ -198,7 +205,7 @@ void full2_layer(stream_full1 &input, stream_full2 &output) {
     }
 }
 
-void write_output(stream_full2 &input, stream_output &output) {
+void write_output(stream_full2 &input, uint8_t* output) {
 
     full2_t input_1d[FULL2_OUTPUT_SIZE] = { 0, };
 
@@ -208,7 +215,7 @@ void write_output(stream_full2 &input, stream_output &output) {
 
     full2_t max = input_1d[0];
     
-    int max_index = 0;
+    uint8_t max_index = 0;
     
     for (int i = 1; i < 10; i++) {
         if (max < input_1d[i]) {
@@ -217,5 +224,5 @@ void write_output(stream_full2 &input, stream_output &output) {
         }
     }
 
-    output.write(max_index);
+    *output = (uint8_t)max_index;
 }
