@@ -1,0 +1,43 @@
+---------- LeNet-5 Start ----------
+[INFO] SD Init PASSED
+[INFO] Read 0 binary file PASSED
+[INFO] SD Card Read PASSED
+[INFO] Input initialize PASSED
+[INFO] SD Eject PASSED
+[INFO] DMA initialize PASSED
+[INFO] AXI Timer initialzed PASSED
+[INFO] Predict Core initialized PASSED
+
+[INFO] Timer setup    run time :         29 cycles.
+[INFO] Loop iteration run time :         21 cycles. (2)
+
+[INFO] Total [HW]     run time :     303158 cycles over 2 tests.
+[INFO] One sample     run time :     151579 cycles.
+
+[INFO] 0 iter DMA Tx run time : 751 cycles.
+[INFO] 0 iter HW Acc run time : 199439 cycles.
+[INFO] 0 iter Intr run time : 111 cycles.
+
+[INFO] 1 iter DMA Tx run time : 735 cycles.
+[INFO] 1 iter HW Acc run time : 102732 cycles.
+[INFO] 1 iter Intr run time : 96 cycles.
+
+[INFO] Start point : 29
+[INFO] 0 DMA Tx Start point : 98
+[INFO] 0 DMA Tx End point : 878
+[INFO] 0 HW ACC Start point : 906
+[INFO] 0 HW ACC End point : 200374
+[INFO] 0 Intr Start point : 200403
+[INFO] 0 Intr End point : 200543
+[INFO] 1 DMA Tx Start point : 942
+[INFO] 1 DMA Tx End point : 1706
+[INFO] 1 HW ACC Start point : 1733
+[INFO] 1 HW ACC End point : 303135
+[INFO] 1 Intr Start point : 303162
+[INFO] 1 Intr End point : 303287
+[INFO] End point : 303237
+
+[HW Result]
+Accuracy : 100.00 [%]
+Error    :     0  [cases]
+----------- LeNet-5 End -----------

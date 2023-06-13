@@ -1,0 +1,73 @@
+---------- LeNet-5 Start ----------
+[INFO] SD Init PASSED
+[INFO] Read 0 binary file PASSED
+[INFO] SD Card Read PASSED
+[INFO] Input initialize PASSED
+[INFO] SD Eject PASSED
+[INFO] DMA initialize PASSED
+[INFO] AXI Timer initialzed PASSED
+[INFO] Predict Core initialized PASSED
+
+[INFO] Timer setup    run time :         30 cycles.
+[INFO] Loop iteration run time :         25 cycles. (5)
+
+[INFO] Total [HW]     run time :     611539 cycles over 5 tests.
+[INFO] One sample     run time :     122307 cycles.
+
+[INFO] 0 iter DMA Tx run time : 722 cycles.
+[INFO] 0 iter HW Acc run time : 199459 cycles.
+[INFO] 0 iter Intr run time : 120 cycles.
+
+[INFO] 1 iter DMA Tx run time : 706 cycles.
+[INFO] 1 iter HW Acc run time : 102703 cycles.
+[INFO] 1 iter Intr run time : 71 cycles.
+
+[INFO] 2 iter DMA Tx run time : 701 cycles.
+[INFO] 2 iter HW Acc run time : 102770 cycles.
+[INFO] 2 iter Intr run time : 69 cycles.
+
+[INFO] 3 iter DMA Tx run time : 708 cycles.
+[INFO] 3 iter HW Acc run time : 102772 cycles.
+[INFO] 3 iter Intr run time : 71 cycles.
+
+[INFO] 4 iter DMA Tx run time : 97100 cycles.
+[INFO] 4 iter HW Acc run time : 102771 cycles.
+[INFO] 4 iter Intr run time : 99 cycles.
+
+[INFO] Start point : 27
+[INFO] 0 DMA Tx Start point : 113
+[INFO] 0 DMA Tx End point : 865
+[INFO] 0 HW ACC Start point : 893
+[INFO] 0 HW ACC End point : 200382
+[INFO] 0 Intr Start point : 200413
+[INFO] 0 Intr End point : 200563
+[INFO] 1 DMA Tx Start point : 929
+[INFO] 1 DMA Tx End point : 1665
+[INFO] 1 HW ACC Start point : 1691
+[INFO] 1 HW ACC End point : 303115
+[INFO] 1 Intr Start point : 303141
+[INFO] 1 Intr End point : 303242
+[INFO] 2 DMA Tx Start point : 1729
+[INFO] 2 DMA Tx End point : 2460
+[INFO] 2 HW ACC Start point : 2487
+[INFO] 2 HW ACC End point : 405915
+[INFO] 2 Intr Start point : 405942
+[INFO] 2 Intr End point : 406041
+[INFO] 3 DMA Tx Start point : 2521
+[INFO] 3 DMA Tx End point : 3259
+[INFO] 3 HW ACC Start point : 3286
+[INFO] 3 HW ACC End point : 508717
+[INFO] 3 Intr Start point : 508744
+[INFO] 3 Intr End point : 508845
+[INFO] 4 DMA Tx Start point : 3319
+[INFO] 4 DMA Tx End point : 100449
+[INFO] 4 HW ACC Start point : 100475
+[INFO] 4 HW ACC End point : 611518
+[INFO] 4 Intr Start point : 611544
+[INFO] 4 Intr End point : 611673
+[INFO] End point : 611621
+
+[HW Result]
+Accuracy : 100.00 [%]
+Error    :     0  [cases]
+----------- LeNet-5 End -----------
