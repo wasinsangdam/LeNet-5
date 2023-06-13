@@ -35,7 +35,7 @@ int main (int argc, char* argv[]) {
     /* Run all test cases */
     int err_cnt = 0;
 
-    int     answer[TEST_NUM] = { 0, };
+    int        answer[TEST_NUM] = { 0, };
     uint8_t my_answer[TEST_NUM] = { 0, };
 
     std::string answer_file = ANSWER_FILE;

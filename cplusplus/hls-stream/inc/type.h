@@ -19,7 +19,7 @@
     precision while accumulating the sum over all products. [2*QI, 2*QF]  
 */
 
-typedef ap_axiu<16, 0, 0, 0> axis_t;
+typedef ap_axiu<16, 0, 0, 0> axis_t;                    // Data types for AXI streaming with side-channel
 
 typedef ap_ufixed<16,  1, AP_RND, AP_SAT> input_t;
 
@@ -37,7 +37,7 @@ typedef  ap_fixed<32, 14, AP_RND, AP_SAT> conv3_temp;   // Integer part : 14, Fr
 typedef  ap_fixed<32, 14, AP_RND, AP_SAT> full1_temp;   // Integer part : 14, Fractional part : 18
 typedef  ap_fixed<32, 14, AP_RND, AP_SAT> full2_temp;   // Integer part : 14, Fractional part : 18
 
-typedef hls::stream<axis_t> stream_axis;
+typedef hls::stream<axis_t> stream_axis;                // Stream data types for AXI streaming with side-channel
 
 typedef hls::stream<input_t> stream_input;
 typedef hls::stream<conv1_t> stream_conv1;
