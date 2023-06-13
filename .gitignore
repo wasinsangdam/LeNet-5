@@ -1,10 +1,12 @@
-/*
 
 !*.cc
 !*.h
 !*.py
 !*.ipynb
+!Makefile
 
 *.json
 *.data
 *.txt
+*.bin
+.vscode
