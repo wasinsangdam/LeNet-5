@@ -13,6 +13,7 @@
 *.txt
 *.bin
 .vscode
+*.o
 
 /python/model
 /python/model_lite
