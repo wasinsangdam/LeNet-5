@@ -1,3 +1,6 @@
+*
+!*.*
+!*/
 
 !*.cc
 !*.h
@@ -13,3 +16,4 @@
 
 /python/model
 /python/model_lite
+/hls
