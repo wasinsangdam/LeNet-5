@@ -46,8 +46,6 @@ int main (int argc, char* argv[]) {
 
     for (size_t i = 0; i < TEST_NUM; i++) {
         
-        stream_output output;
-
         std::string dir   = INPUT_DIR;
         std::string input = "input_";
         std::string num   = std::to_string(i);

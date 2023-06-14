@@ -1,6 +1,6 @@
 #include "../inc/layer.h"
 
-void read_input(stream_axis &input, stream_input &input_stream) {
+void read_input(stream_axis &input, stream_input &output) {
 
     axis_t  temp_axis;
     input_t temp_input;
@@ -9,7 +9,7 @@ void read_input(stream_axis &input, stream_input &input_stream) {
         temp_axis = input.read();
         temp_input.range() = temp_axis.data.range();
 
-        input_stream.write(temp_input);
+        output.write(temp_input);
     }
 }
 
