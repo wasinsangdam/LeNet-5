@@ -1,0 +1,63 @@
+---------- LeNet-5 Start ----------
+[INFO] SD Init PASSED
+[INFO] Read 0 binary file PASSED
+[INFO] SD Card Read PASSED
+[INFO] Input initialize PASSED
+[INFO] SD Eject PASSED
+[INFO] DMA initialize PASSED
+[INFO] AXI Timer initialzed PASSED
+[INFO] Predict Core initialized PASSED
+
+[INFO] Timer setup    run time :         29 cycles.
+[INFO] Loop iteration run time :         25 cycles. (4)
+
+[INFO] Total [HW]     run time :     508760 cycles over 4 tests.
+[INFO] One sample     run time :     127190 cycles.
+
+[INFO] 0 iter DMA Tx run time : 721 cycles.
+[INFO] 0 iter HW Acc run time : 199452 cycles.
+[INFO] 0 iter Intr run time : 110 cycles.
+
+[INFO] 1 iter DMA Tx run time : 704 cycles.
+[INFO] 1 iter HW Acc run time : 102717 cycles.
+[INFO] 1 iter Intr run time : 72 cycles.
+
+[INFO] 2 iter DMA Tx run time : 709 cycles.
+[INFO] 2 iter HW Acc run time : 102769 cycles.
+[INFO] 2 iter Intr run time : 72 cycles.
+
+[INFO] 3 iter DMA Tx run time : 702 cycles.
+[INFO] 3 iter HW Acc run time : 102773 cycles.
+[INFO] 3 iter Intr run time : 98 cycles.
+
+[INFO] Start point : 27
+[INFO] 0 DMA Tx Start point : 133
+[INFO] 0 DMA Tx End point : 883
+[INFO] 0 HW ACC Start point : 911
+[INFO] 0 HW ACC End point : 200392
+[INFO] 0 Intr Start point : 200421
+[INFO] 0 Intr End point : 200560
+[INFO] 1 DMA Tx Start point : 947
+[INFO] 1 DMA Tx End point : 1680
+[INFO] 1 HW ACC Start point : 1707
+[INFO] 1 HW ACC End point : 303138
+[INFO] 1 Intr Start point : 303165
+[INFO] 1 Intr End point : 303266
+[INFO] 2 DMA Tx Start point : 1744
+[INFO] 2 DMA Tx End point : 2482
+[INFO] 2 HW ACC Start point : 2509
+[INFO] 2 HW ACC End point : 405936
+[INFO] 2 Intr Start point : 405963
+[INFO] 2 Intr End point : 406064
+[INFO] 3 DMA Tx Start point : 2542
+[INFO] 3 DMA Tx End point : 3273
+[INFO] 3 HW ACC Start point : 3300
+[INFO] 3 HW ACC End point : 508738
+[INFO] 3 Intr Start point : 508765
+[INFO] 3 Intr End point : 508892
+[INFO] End point : 508841
+
+[HW Result]
+Accuracy : 100.00 [%]
+Error    :     0  [cases]
+----------- LeNet-5 End -----------

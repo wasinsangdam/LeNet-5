@@ -8,9 +8,7 @@
 !*.ipynb
 !Makefile
 
-*.json
 *.data
-*.txt
 *.bin
 .vscode
 *.o

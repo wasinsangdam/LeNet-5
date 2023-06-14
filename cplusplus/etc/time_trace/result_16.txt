@@ -1,0 +1,184 @@
+- --------- LeNet-5 Start ----------
+[INFO] SD Init PASSED
+[INFO] Read 0 binary file PASSED
+[INFO] Read 8 binary file PASSED
+[INFO] SD Card Read PASSED
+[INFO] Input initialize PASSED
+[INFO] SD Eject PASSED
+[INFO] DMA initialize PASSED
+[INFO] AXI Timer initialzed PASSED
+[INFO] Predict Core initialized PASSED
+
+[INFO] Timer setup    run time :         29 cycles.
+[INFO] Loop iteration run time :         44 cycles. (16)
+
+[INFO] Total [HW]     run time :    1742312 cycles over 16 tests.
+[INFO] One sample     run time :     108894 cycles.
+
+[INFO] 0 iter DMA Tx run time : 723 cycles.
+[INFO] 0 iter HW Acc run time : 199495 cycles.
+[INFO] 0 iter Intr run time : 110 cycles.
+
+[INFO] 1 iter DMA Tx run time : 702 cycles.
+[INFO] 1 iter HW Acc run time : 102684 cycles.
+[INFO] 1 iter Intr run time : 72 cycles.
+
+[INFO] 2 iter DMA Tx run time : 706 cycles.
+[INFO] 2 iter HW Acc run time : 102769 cycles.
+[INFO] 2 iter Intr run time : 72 cycles.
+
+[INFO] 3 iter DMA Tx run time : 717 cycles.
+[INFO] 3 iter HW Acc run time : 102762 cycles.
+[INFO] 3 iter Intr run time : 70 cycles.
+
+[INFO] 4 iter DMA Tx run time : 97075 cycles.
+[INFO] 4 iter HW Acc run time : 102787 cycles.
+[INFO] 4 iter Intr run time : 70 cycles.
+
+[INFO] 5 iter DMA Tx run time : 102701 cycles.
+[INFO] 5 iter HW Acc run time : 102766 cycles.
+[INFO] 5 iter Intr run time : 72 cycles.
+
+[INFO] 6 iter DMA Tx run time : 102709 cycles.
+[INFO] 6 iter HW Acc run time : 102763 cycles.
+[INFO] 6 iter Intr run time : 70 cycles.
+
+[INFO] 7 iter DMA Tx run time : 102727 cycles.
+[INFO] 7 iter HW Acc run time : 102787 cycles.
+[INFO] 7 iter Intr run time : 70 cycles.
+
+[INFO] 8 iter DMA Tx run time : 102727 cycles.
+[INFO] 8 iter HW Acc run time : 102762 cycles.
+[INFO] 8 iter Intr run time : 72 cycles.
+
+[INFO] 9 iter DMA Tx run time : 102677 cycles.
+[INFO] 9 iter HW Acc run time : 102789 cycles.
+[INFO] 9 iter Intr run time : 70 cycles.
+
+[INFO] 10 iter DMA Tx run time : 102728 cycles.
+[INFO] 10 iter HW Acc run time : 102762 cycles.
+[INFO] 10 iter Intr run time : 72 cycles.
+
+[INFO] 11 iter DMA Tx run time : 102703 cycles.
+[INFO] 11 iter HW Acc run time : 102759 cycles.
+[INFO] 11 iter Intr run time : 70 cycles.
+
+[INFO] 12 iter DMA Tx run time : 102701 cycles.
+[INFO] 12 iter HW Acc run time : 102773 cycles.
+[INFO] 12 iter Intr run time : 70 cycles.
+
+[INFO] 13 iter DMA Tx run time : 102704 cycles.
+[INFO] 13 iter HW Acc run time : 102771 cycles.
+[INFO] 13 iter Intr run time : 72 cycles.
+
+[INFO] 14 iter DMA Tx run time : 102727 cycles.
+[INFO] 14 iter HW Acc run time : 102773 cycles.
+[INFO] 14 iter Intr run time : 72 cycles.
+
+[INFO] 15 iter DMA Tx run time : 102728 cycles.
+[INFO] 15 iter HW Acc run time : 102772 cycles.
+[INFO] 15 iter Intr run time : 96 cycles.
+
+[INFO] Start point : 27
+[INFO] 0 DMA Tx Start point : 92
+[INFO] 0 DMA Tx End point : 844
+[INFO] 0 HW ACC Start point : 872
+[INFO] 0 HW ACC End point : 200396
+[INFO] 0 Intr Start point : 200426
+[INFO] 0 Intr End point : 200565
+[INFO] 1 DMA Tx Start point : 908
+[INFO] 1 DMA Tx End point : 1639
+[INFO] 1 HW ACC Start point : 1666
+[INFO] 1 HW ACC End point : 303109
+[INFO] 1 Intr Start point : 303135
+[INFO] 1 Intr End point : 303236
+[INFO] 2 DMA Tx Start point : 1703
+[INFO] 2 DMA Tx End point : 2438
+[INFO] 2 HW ACC Start point : 2465
+[INFO] 2 HW ACC End point : 405907
+[INFO] 2 Intr Start point : 405933
+[INFO] 2 Intr End point : 406034
+[INFO] 3 DMA Tx Start point : 2498
+[INFO] 3 DMA Tx End point : 3244
+[INFO] 3 HW ACC Start point : 3271
+[INFO] 3 HW ACC End point : 508698
+[INFO] 3 Intr Start point : 508725
+[INFO] 3 Intr End point : 508824
+[INFO] 4 DMA Tx Start point : 3304
+[INFO] 4 DMA Tx End point : 100408
+[INFO] 4 HW ACC Start point : 100435
+[INFO] 4 HW ACC End point : 611514
+[INFO] 4 Intr Start point : 611541
+[INFO] 4 Intr End point : 611640
+[INFO] 5 DMA Tx Start point : 100468
+[INFO] 5 DMA Tx End point : 203198
+[INFO] 5 HW ACC Start point : 203225
+[INFO] 5 HW ACC End point : 714309
+[INFO] 5 Intr Start point : 714336
+[INFO] 5 Intr End point : 714437
+[INFO] 6 DMA Tx Start point : 203258
+[INFO] 6 DMA Tx End point : 305996
+[INFO] 6 HW ACC Start point : 306023
+[INFO] 6 HW ACC End point : 817101
+[INFO] 6 Intr Start point : 817128
+[INFO] 6 Intr End point : 817227
+[INFO] 7 DMA Tx Start point : 306056
+[INFO] 7 DMA Tx End point : 408812
+[INFO] 7 HW ACC Start point : 408839
+[INFO] 7 HW ACC End point : 919917
+[INFO] 7 Intr Start point : 919944
+[INFO] 7 Intr End point : 920043
+[INFO] 8 DMA Tx Start point : 408872
+[INFO] 8 DMA Tx End point : 511628
+[INFO] 8 HW ACC Start point : 511655
+[INFO] 8 HW ACC End point : 1022708
+[INFO] 8 Intr Start point : 1022735
+[INFO] 8 Intr End point : 1022836
+[INFO] 9 DMA Tx Start point : 511688
+[INFO] 9 DMA Tx End point : 614394
+[INFO] 9 HW ACC Start point : 614421
+[INFO] 9 HW ACC End point : 1125526
+[INFO] 9 Intr Start point : 1125553
+[INFO] 9 Intr End point : 1125652
+[INFO] 10 DMA Tx Start point : 614458
+[INFO] 10 DMA Tx End point : 717215
+[INFO] 10 HW ACC Start point : 717242
+[INFO] 10 HW ACC End point : 1228317
+[INFO] 10 Intr Start point : 1228344
+[INFO] 10 Intr End point : 1228445
+[INFO] 11 DMA Tx Start point : 717275
+[INFO] 11 DMA Tx End point : 820007
+[INFO] 11 HW ACC Start point : 820034
+[INFO] 11 HW ACC End point : 1331105
+[INFO] 11 Intr Start point : 1331132
+[INFO] 11 Intr End point : 1331231
+[INFO] 12 DMA Tx Start point : 820067
+[INFO] 12 DMA Tx End point : 922797
+[INFO] 12 HW ACC Start point : 922824
+[INFO] 12 HW ACC End point : 1433907
+[INFO] 12 Intr Start point : 1433934
+[INFO] 12 Intr End point : 1434033
+[INFO] 13 DMA Tx Start point : 922857
+[INFO] 13 DMA Tx End point : 1025590
+[INFO] 13 HW ACC Start point : 1025617
+[INFO] 13 HW ACC End point : 1536707
+[INFO] 13 Intr Start point : 1536734
+[INFO] 13 Intr End point : 1536835
+[INFO] 14 DMA Tx Start point : 1025650
+[INFO] 14 DMA Tx End point : 1128406
+[INFO] 14 HW ACC Start point : 1128433
+[INFO] 14 HW ACC End point : 1639509
+[INFO] 14 Intr Start point : 1639536
+[INFO] 14 Intr End point : 1639637
+[INFO] 15 DMA Tx Start point : 1128466
+[INFO] 15 DMA Tx End point : 1231223
+[INFO] 15 HW ACC Start point : 1231250
+[INFO] 15 HW ACC End point : 1742310
+[INFO] 15 Intr Start point : 1742337
+[INFO] 15 Intr End point : 1742462
+[INFO] End point : 1742412
+
+[HW Result]
+Accuracy : 100.00 [%]
+Error    :     0  [cases]
+----------- LeNet-5 End -----------
