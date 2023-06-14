@@ -1,6 +1,6 @@
 #include "../inc/predict.h"
 
-void predict(axis_input &input, uint8_t* output_r) {
+void predict(stream_axis &input, uint8_t* output_r) {
 
     stream_input sub0_input;
     stream_input sub1_input;

@@ -18,9 +18,6 @@ void read_data(std::string file_name, stream_axis &stream, size_t size) {
 
         temp_axi.data.range() = temp_input.range();
 
-        if (i == size - 1) temp_axi.last = 1;
-        else               temp_axi.last = 0;
-
         stream.write(temp_axi);
     }
 

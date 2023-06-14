@@ -24,26 +24,13 @@ void conv1_layer(input_t input[IMAGE_ROW][IMAGE_COL],
                     }
                 }
 
-                output[wn][orow][ocol] = (conv1_t)acc;
+                if (acc > 0) output[wn][orow][ocol] = (conv1_t)acc;
+                else         output[wn][orow][ocol] = (conv1_t)0.0;
             }
         }
     }
 }
 
-void relu1_layer(conv1_t  input[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_COL],
-                 conv1_t output[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_COL]) 
-{
-    for (int k = 0; k < CONV1_OUTPUT_NUM; k++) {
-        for (int i = 0; i < CONV1_OUTPUT_ROW; i++) {
-            for (int j = 0; j < CONV1_OUTPUT_COL; j++) {
-                if (input[k][i][j] > 0)
-                    output[k][i][j] = input[k][i][j];
-                else 
-                    output[k][i][j] = (conv1_t)0.0;
-            }
-        }
-    }
-}
 
 void pool1_layer(conv1_t  input[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_COL],
                  conv1_t output[POOL1_OUTPUT_NUM][POOL1_OUTPUT_ROW][POOL1_OUTPUT_COL]) 
@@ -86,26 +73,13 @@ void conv2_layer(conv1_t  input[POOL1_OUTPUT_NUM][POOL1_OUTPUT_ROW][POOL1_OUTPUT
                     }
                 }
 
-                output[wn][orow][ocol] = (conv2_t)acc;
+                if (acc > 0) output[wn][orow][ocol] = (conv2_t)acc;
+                else         output[wn][orow][ocol] = (conv2_t)0.0;
             }
         }
     }
 }
 
-void relu2_layer(conv2_t  input[CONV2_OUTPUT_NUM][CONV2_OUTPUT_ROW][CONV2_OUTPUT_COL],
-                 conv2_t output[CONV2_OUTPUT_NUM][CONV2_OUTPUT_ROW][CONV2_OUTPUT_COL]) 
-{
-    for (int k = 0; k < CONV2_OUTPUT_NUM; k++) {
-        for (int i = 0; i < CONV2_OUTPUT_ROW; i++) {
-            for (int j = 0; j < CONV2_OUTPUT_COL; j++) {
-                if (input[k][i][j] > 0)
-                    output[k][i][j] = input[k][i][j];
-                else 
-                    output[k][i][j] = (conv2_t)0.0;
-            }
-        }
-    }
-}
 
 void pool2_layer(conv2_t  input[CONV2_OUTPUT_NUM][CONV2_OUTPUT_ROW][CONV2_OUTPUT_COL],
                  conv2_t output[POOL2_OUTPUT_NUM][POOL2_OUTPUT_ROW][POOL2_OUTPUT_COL]) 
@@ -146,20 +120,11 @@ void conv3_layer(conv2_t  input[POOL2_OUTPUT_NUM][POOL2_OUTPUT_ROW][POOL2_OUTPUT
             }
         }
 
-        output[wn] = (conv3_t)acc;
+        if (acc > 0) output[wn] = (conv3_t)acc;
+        else         output[wn] = (conv3_t)0.0;
     }
 }
 
-void relu3_layer(conv3_t  input[CONV3_OUTPUT_SIZE],
-                 conv3_t output[CONV3_OUTPUT_SIZE]) 
-{
-    for (int i = 0; i < CONV3_OUTPUT_SIZE; i++) {
-        if (input[i] > 0) 
-            output[i] = input[i];
-        else
-            output[i] = (conv3_t)0.0;
-    }
-}
 
 void full1_layer(conv3_t  input[CONV3_OUTPUT_SIZE],
                  full1_t output[FULL1_OUTPUT_SIZE])
@@ -172,20 +137,11 @@ void full1_layer(conv3_t  input[CONV3_OUTPUT_SIZE],
             acc += (full1_temp)(input[col] * full1_weight[row][col]);
         }
 
-        output[row] = (full1_t)acc;
+        if (acc > 0) output[row] = (full1_t)acc;
+        else         output[row] = (full1_t)0.0;
     }
 }
 
-void relu4_layer(full1_t  input[FULL1_OUTPUT_SIZE],
-                 full1_t output[FULL1_OUTPUT_SIZE]) 
-{
-    for (int i = 0; i < FULL1_OUTPUT_SIZE; i++) {
-        if (input[i] > 0) 
-            output[i] = input[i];
-        else
-            output[i] = (full1_t)0.0;
-    }
-}
 
 void full2_layer(full1_t  input[FULL1_OUTPUT_SIZE],
                  full2_t output[FULL2_OUTPUT_SIZE])

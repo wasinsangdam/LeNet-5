@@ -5,6 +5,6 @@
 #include "util.h"
 #include "type.h"
 
-void predict(axis_input &input, uint8_t* output_r);
+void predict(stream_axis &input, uint8_t* output_r);
 
 #endif

@@ -30,8 +30,7 @@ int main (int argc, char* argv[]) {
 
     std::string input_data;
 
-    input_t input_array[IMAGE_SIZE] = { 0.0, };
-    axis_input axis[TEST_NUM];
+    stream_axis input_axi_stream;
 
     /* Run all test cases */
     int err_cnt = 0;
@@ -54,9 +53,9 @@ int main (int argc, char* argv[]) {
 
         std::string file  = dir + input + num + ext;
 
-        read_data(file, axis[i], input_array, IMAGE_SIZE);
+        read_data(file, input_axi_stream, IMAGE_SIZE);
 
-        predict(axis[i], &my_answer[i]);
+        predict(input_axi_stream, &my_answer[i]);
 
         if (my_answer[i] != answer[i]) {
             err_cnt++;

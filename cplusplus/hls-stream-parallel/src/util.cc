@@ -1,6 +1,6 @@
 #include "../inc/util.h"
 
-void read_data(std::string file_name, axis_input &axis, input_t* array, size_t size) {
+void read_data(std::string file_name, stream_axis &stream, size_t size) {
     std::fstream fs;
 
     fs.open(file_name);
@@ -10,14 +10,15 @@ void read_data(std::string file_name, axis_input &axis, input_t* array, size_t s
         exit(1);
     }
 
-    axis_i temp;
+    axis_t  temp_axi;
+    input_t temp_input;
 
     for (size_t i = 0; i < size; i++) {
-        fs >> array[i];
+        fs >> temp_input;
 
-        temp.data = array[i].range();
+        temp_axi.data.range() = temp_input.range();
 
-        axis.write(temp);
+        stream.write(temp_axi);
     }
 
     fs.close();

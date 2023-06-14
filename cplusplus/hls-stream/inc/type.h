@@ -10,9 +10,6 @@
     and fractional part, refer to the ../etc/data_type directory. 
 
     Input has only a value from 0 to 1.
-
-    The reason for unsigned is that only 
-    positive values are left through the ReLU layer. 
     
     Temporary fixed-point data type with enough width 
     to prevent saturation/overflow and avoid any loss of 

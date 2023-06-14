@@ -6,9 +6,9 @@
 #include "weight.h"
 #include "hls_math.h"
 
-void read_input(axis_input &input, stream_input &sub0,
-                                   stream_input &sub1,
-                                   stream_input &sub2);
+void read_input(stream_axis &input, stream_input &sub0,
+                                    stream_input &sub1,
+                                    stream_input &sub2);
 
 void sub0_conv1_layer(stream_input &input, stream_conv1 &output);
 void sub1_conv1_layer(stream_input &input, stream_conv1 &output);

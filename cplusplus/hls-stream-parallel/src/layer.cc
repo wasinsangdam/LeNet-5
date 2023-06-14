@@ -1,10 +1,10 @@
 #include "../inc/layer.h"
 
-void read_input(axis_input &input, stream_input &sub0,
-                                   stream_input &sub1,
-                                   stream_input &sub2) {
+void read_input(stream_axis &input, stream_input &sub0,
+                                    stream_input &sub1,
+                                    stream_input &sub2) {
 
-    axis_i temp_axis;
+    axis_t  temp_axis;
     input_t temp_input;
 
     for (int i = 0; i < IMAGE_SIZE; i++) {

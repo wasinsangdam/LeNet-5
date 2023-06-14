@@ -2,7 +2,7 @@
 
 void read_input(stream_axis &input, stream_input &input_stream) {
 
-    axis_t temp_axis;
+    axis_t  temp_axis;
     input_t temp_input;
 
     for (int i = 0 ; i < IMAGE_SIZE; i++) {
