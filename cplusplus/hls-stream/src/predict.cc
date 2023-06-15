@@ -1,6 +1,13 @@
 #include "../inc/predict.h"
 
 void predict(stream_axis &input, uint8_t* output) {
+    #pragma HLS INTERFACE axis port=input
+
+    #pragma HLS INTERFACE s_axilite     port=output bundle=CONTROL_BUS
+    #pragma HLS INTERFACE s_axilite     port=return	bundle=CONTROL_BUS
+    #pragma HLS INTERFACE ap_ctrl_chain port=return bundle=CONTROL_BUS
+
+    #pragma HLS DATAFLOW
 
     stream_input input_stream;
     
