@@ -1,0 +1,29 @@
+{ "signal" : 
+    
+    [
+        "DMA Transfer",
+        { "name" : "Interrupt", "wave" : "1....|....|....|..0.|....|"},
+        {},
+        { "name" : "Read Transactions",  "wave" : "x3.x.|3.x.|3.x.|....|3.x.|", "data" : ["Addr 0x04","Addr 0x14","Addr 0x10","Addr 0x04"]},
+        {},
+    
+        [
+            "R Channel",
+            { "name" : "RVALID", "wave" : "x.1xx|.1xx|.1xx|....|.1xx|"},
+            { "name" : "RREADY", "wave" : "x1..x|1..x|1..x|....|1..x|"},
+            { "name" : "RDATA" , "wave" : "x232x|232x|232x|....|232x|", "data" : ["0x0","Data","0x0","0x0","Data","0x0","0x0","Data","0x0","0x0","Data","0x0"]}
+        ],{},{},
+        
+        { "name" : "Write Transactions", "wave" : "x....|....|....|6.x.|....|", "data" : ["Addr 0x0C","Addr 0x00"]},
+        {},
+        [
+            "W Channel",
+            { "name" : "WVALID", "wave" : "x....|....|....|.1xx|....|"},
+            { "name" : "WREADY", "wave" : "x....|....|....|1..x|....|"},
+            { "name" : "WDATA" , "wave" : "x....|....|....|262x|....|", "data" : ["0x0","Data","0x0","0x0", "Data", "0x0"]}
+        ],
+        
+        {}
+    ],
+    "config" : {"hscale" : 1}
+}

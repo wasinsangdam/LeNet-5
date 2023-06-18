@@ -1,0 +1,29 @@
+{ "signal" : 
+    
+    [
+        "DMA Transfer",
+
+        { "name" : "ARM to DMA IP",     "wave" : "x|..3..........x..........", "data" : ["Data Beat (AXI MM2S)"]},
+        
+        {},
+        [
+            "R Channel",
+            { "name" : "RVALID",        "wave" : "x|.01....|.....x.........."},
+            { "name" : "RREADY",        "wave" : "x|.1.....|.....x.........."},
+            { "name" : "RDATA" ,        "wave" : "x|.233333|.33332x.........", "data" : ["0x0","Data","Data","Data","Data","Data     (32-bit)","Data","Data","Data","Data","0x0"]}
+        ],
+        {},{},
+        
+        { "name" : "DMA IP to HLS IP",  "wave" : "x|......6..............x..", "data" : ["Stream Beat (AXIS MM2S)"]},
+        {},
+        [
+            "T Channel",
+            { "name" : "TVALID",        "wave" : "x|......1......|.......x.."},
+            { "name" : "TREADY",        "wave" : "x|.....1.......|.......x.."},
+            { "name" : "TDATA" ,        "wave" : "x|.....26666666|.6666662x.", "data" : ["0x0","Data","Data","Data","Data","Data","Data","Data     (16-bit)","Data","Data","Data","Data","Data","Data","0x0"]},
+            { "name" : "TLAST" ,        "wave" : "x|.....0.......|......10x."}
+        ],
+        {}
+    ],
+    "config" : {"hscale" : 1}
+}
