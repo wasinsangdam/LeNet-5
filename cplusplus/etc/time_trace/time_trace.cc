@@ -15,7 +15,7 @@
 
 using namespace std;
 
-#define RESULT_NUM 2
+#define RESULT_NUM 5
 
 #if     RESULT_NUM == 1
     #define RESULT_FILE "result_1.txt"
@@ -115,11 +115,71 @@ void print(vector<pair<string, int>> &vector) {
         if (v.first.find("DMA") != string::npos) 
             cout << YELLOW "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else if (v.first.find("ACC") != string::npos) 
-            cout << MAGENTA"[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
+            cout << CYAN"[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else if (v.first.find("ITR") != string::npos) continue;
-            // cout << CYAN   "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
+            // cout << MAGENTA   "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else 
             cout << "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
+    }
+
+    std::vector<pair<string, int>> acc;
+    std::vector<pair<string, int>> dma;
+
+
+    for (auto v : vector) {
+        if (v.first.find("START_DMA_") != string::npos) {
+
+            int  length = v.first.length();
+            char number = v.first.at(length - 1);
+            int latency = 0;
+            
+            string find_str = "END_DMA_";
+            find_str += number;
+
+            string str = "DMA_";
+            str += number;
+
+            for (auto vv : vector) {
+                if (vv.first.find(find_str) != string::npos) {
+                    latency = vv.second - v.second;
+                }
+                else continue;
+            }
+            dma.push_back(make_pair(str, latency));
+        }
+        else if (v.first.find("START_ACC_") != string::npos) {
+
+            int  length = v.first.length();
+            char number = v.first.at(length - 1);
+            int latency = 0;
+
+            string find_str = "END_ACC_";
+            find_str += number;
+
+            string str = "ACC_";
+            str += number;
+
+
+            for (auto vv : vector) {
+                if (vv.first.find(find_str) != string::npos) {
+                    latency = vv.second - v.second;
+                }
+                else continue;
+            }
+
+            acc.push_back(make_pair(str, latency));
+        }
+        else continue;
+    }
+
+    for (auto d : dma) {
+        cout << d.first << " : " << d.second << "\n";
+    }
+
+    cout << "\n";
+
+    for (auto a : acc) {
+        cout << a.first << " : " << a.second << "\n";
     }
 }
 

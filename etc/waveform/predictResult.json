@@ -1,0 +1,22 @@
+{ "signal" : 
+    
+    [
+        "DMA Transfer",
+        { "name" : "Start",   "wave" : "010.........................."}, 
+
+        { "name" : "DMA",     "wave" : "x3.x3.x3.x3.x.3..|.x.........", "data" : ["Input 1", "Input 2", "Input 3", "Input 4", "Input 5"]},
+        
+        {},
+        [ "Predict IP",
+        { "name" : "Input 1", "wave" : "x..6..............|.x........", "data" : ["Processing input 1"]},
+        { "name" : "Input 2", "wave" : "x.....6.............|.x......", "data" : ["Processing input 2"]},
+        { "name" : "Input 3", "wave" : "x........6............|.x....", "data" : ["Processing input 3"]},
+        { "name" : "Input 4", "wave" : "x...........6...........|.x..", "data" : ["Processing input 4"]},
+        { "name" : "Input 5", "wave" : "x..................6......|.x", "data" : ["Processing input 5"]}
+        ],{},
+        { "name" : "End",     "wave" : "0..........................10"}
+        
+        
+    ],
+    "config" : {"hscale" : 1}
+}
