@@ -14,7 +14,7 @@
 *.o
 
 
-/python/model
+/python/model_origin
 /python/model_lite
 
 answer.txt
