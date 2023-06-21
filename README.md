@@ -54,7 +54,7 @@
   * Run one input, and print intermediate results.
     * `./main --input=../../data/input_N.data --print=true`
     * `./main --i=../../data/input_N.data -p=true`
-  * Run all
+  * Run all (Check accuracy and find Max/Min value of intermediate outputs, weights and biases.)
     * `./main --all=true`
     * `./main -a=true`
 
