@@ -1,7 +1,7 @@
 # Compiler
 CC = g++
 CXXLFAGS = -Wall -Wno-comment -g -O2
-LIBS += -lm #-I $(XILINX_HLS)/include -L $(XILINX_HLS)/include
+LIBS += -lm #-I $(XILINX_HLS)/include
 
 # Target
 TARGET = main
