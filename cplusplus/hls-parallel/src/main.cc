@@ -42,7 +42,7 @@ int main (int argc, char* argv[]) {
     
     read_answer(answer_file, answer, TEST_NUM);
     
-    std::cout << "Number \tAnswer\tPredict \n";
+    std::cout << "           Number \tAnswer\tPredict \n";
 
     for (size_t i = 0; i < TEST_NUM; i++) {
         

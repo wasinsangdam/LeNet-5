@@ -8,7 +8,7 @@ void read_input(stream_axis &input, stream_input &output) {
     /* Read input */
     for (int i = 0 ; i < IMAGE_SIZE; i++) {
         temp_axis = input.read();
-        temp_input.range() = temp_axis.data.range();
+        temp_input.range() = temp_axis.data.range(); // range() selects all bits in normal order 
 
         output.write(temp_input);
     }

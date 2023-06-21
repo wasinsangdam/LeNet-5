@@ -9,19 +9,19 @@ void predict(stream_axis &input, uint8_t* output) {
 
     #pragma HLS DATAFLOW
 
-    stream_input input_stream;
+    static stream_input input_stream;
     
-    stream_conv1 conv1_stream;
-    stream_conv1 pool1_stream;
+    static stream_conv1 conv1_stream;
+    static stream_conv1 pool1_stream;
 
-    stream_conv2 conv2_stream;
-    stream_conv2 pool2_stream;
+    static stream_conv2 conv2_stream;
+    static stream_conv2 pool2_stream;
 
-    stream_conv3 conv3_stream;
+    static stream_conv3 conv3_stream;
 
-    stream_full1 full1_stream;
+    static stream_full1 full1_stream;
     
-    stream_full2 full2_stream;
+    static stream_full2 full2_stream;
 
     read_input(input, input_stream);
 
