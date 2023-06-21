@@ -5,7 +5,6 @@
 #include "parameter.h"
 #include "weight.h"
 
-
 void read_input(float* input, input_t output[IMAGE_ROW][IMAGE_COL]);
 
 void conv1_layer(input_t input[IMAGE_ROW][IMAGE_COL], 

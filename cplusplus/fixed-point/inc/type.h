@@ -6,10 +6,7 @@
 /*  For an equation for determining the bits of integer part
     and fractional part, refer to the ../etc/data_type directory. 
 
-    Input has only a value from 0 to 1.
-
-    The reason for unsigned is that only 
-    positive values are left through the ReLU layer. 
+    Input has only a value from 0 to 1. 
     
     Temporary fixed-point data type with enough width 
     to prevent saturation/overflow and avoid any loss of 
@@ -30,16 +27,5 @@ typedef  ap_fixed<32, 10, AP_RND, AP_SAT>  conv2_temp;   // Integer part : 10, F
 typedef  ap_fixed<32, 14, AP_RND, AP_SAT>  conv3_temp;   // Integer part : 14, Fractional part : 18
 typedef  ap_fixed<32, 14, AP_RND, AP_SAT>  full1_temp;   // Integer part : 14, Fractional part : 18
 typedef  ap_fixed<32, 14, AP_RND, AP_SAT>  full2_temp;   // Integer part : 14, Fractional part : 18
-
-// typedef float  input_t ;
-// typedef float  weight_t;
-
-// typedef float  conv1_t;
-// typedef float  conv2_t;
-// typedef float  conv3_t;
-
-// typedef float  full1_t;
-// typedef float  full2_t;
-
 
 #endif

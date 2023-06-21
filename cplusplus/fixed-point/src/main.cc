@@ -27,11 +27,9 @@
 */
 
 int main (int argc, char* argv[]) {
-
     
     float input_array[IMAGE_SIZE] = { 0.0, };
 
-    /* Run all test cases */
     int err_cnt = 0;
 
     int answer[TEST_NUM];

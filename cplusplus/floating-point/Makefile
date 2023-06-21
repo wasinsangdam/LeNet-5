@@ -16,7 +16,6 @@ OBJDIR  := ./obj
 SRCEXT  := cc
 INCEXT  := h
 OBJEXT  := o
-# DEPEXT  := d
 
 # Files
 SOURCES         := $(notdir $(wildcard $(SRCDIR)/*.$(SRCEXT)))
