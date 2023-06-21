@@ -7,10 +7,10 @@
 * Get the input data to be tested and the answer.
 
 `data`
-* Created by `python/*_training.ipynb` and `python/get_data_*.ipynb`.
+* Created by `/python/*_training.ipynb` and `/python/get_data_*.ipynb`.
 * Trained weights and biases are stored as text. (`*.data`)
-* Weights and biases for original model are in `data/origin`.
-* Weights and biases for light model are in `data/lite`.
+* Weights and biases for original model are in `/data/origin`.
+* Weights and biases for light model are in `/data/lite`.
 
 `cplusplus`
 * Implemented according to each model and data type.
@@ -42,7 +42,7 @@
 `python`
 * Tensorflow must be installed in advance.
 * Since the extension of the file is `*.ipynb`, if you use vscode, it is recommended to install `Jupyter` extension.
-* If you run all the `*.ipynb` files, `data` folder will be generated.
+* If you run all the `*.ipynb` files, `/data` folder will be generated.
 
 `cplusplus`
 * Each directories can be compiled by the command `make`.
