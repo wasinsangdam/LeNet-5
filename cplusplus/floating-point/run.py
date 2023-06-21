@@ -7,8 +7,8 @@ import time
 def run() :
     input_arg = '--input=../../data/input/input_'
 
-    for i in range(20) :
-        random_number = rd.randrange(0, 100)
+    for i in range(10) :
+        random_number = rd.randrange(0, 10000)
         os.system('clear')
         os.system('./main ' + input_arg + str(random_number) + '.data')
         time.sleep(1)
