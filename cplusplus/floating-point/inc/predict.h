@@ -16,6 +16,4 @@ int predict(float* input, float* conv1_max, float* conv1_min,
 /* Just predict function */
 void predict(float* input, bool print_opt);
 
-// uint8_t predict_ref(float* input);
-
 #endif

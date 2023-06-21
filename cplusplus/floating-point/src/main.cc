@@ -38,14 +38,14 @@ int main (int argc, char* argv[]) {
 
     float input_array[IMAGE_SIZE] = { 0, };
 
-    /* Run all test cases */
+    /* Run all */
     if (all_option) {
         int err_cnt = 0;
 
         int answer[TEST_NUM] = { 0, };
         int my_answer[TEST_NUM] = { 0, };
 
-        /* --- For max/min test --- */
+        /* --- For Max/Min test --- */
         float max_conv1[TEST_NUM];
         float min_conv1[TEST_NUM];
 
@@ -116,6 +116,7 @@ int main (int argc, char* argv[]) {
         std::cout << "Accuracy : " << std::setw(5) << accuracy << " [%] \n";
         std::cout << "Error    : " << std::setw(5) << err_cnt  << " [cases] \n\n";
 
+        /* Find Max/Min */
         max_conv1_value = *std::max_element(max_conv1, max_conv1 + TEST_NUM);
         min_conv1_value = *std::min_element(min_conv1, min_conv1 + TEST_NUM);
 
@@ -141,14 +142,9 @@ int main (int argc, char* argv[]) {
 
     /* Run one sample and print intermediate output depending on print option */
     else {
-        /* Read Input data */
-        read_data(input_data  , input_array , IMAGE_SIZE);
-
-        /* Run one sameple */
-        predict(input_array, print_option);
+        read_data(input_data  , input_array , IMAGE_SIZE);  // Read input data
+        predict(input_array, print_option);                 // Run one input 
     }
 
-    
     return 0;
-
 }

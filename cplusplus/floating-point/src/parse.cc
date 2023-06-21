@@ -41,7 +41,7 @@ void arg_parse(int argc, char* argv[], std::string* file_name, bool* print_opt, 
                 help();
                 exit(0);
             }
-
+            // Run all inputs
             else if (argv1.find(str_all) != std::string::npos) {
                 check_all(argv1, all_opt);
             }
@@ -49,6 +49,7 @@ void arg_parse(int argc, char* argv[], std::string* file_name, bool* print_opt, 
                 check_all(argv1, all_opt);
             }
 
+            // Run one input 
             else if (argv1.find(str_input) != std::string::npos) {
                 check_file(argv1, file_name);
                 *print_opt = false;
@@ -60,16 +61,16 @@ void arg_parse(int argc, char* argv[], std::string* file_name, bool* print_opt, 
 
             break;
         }
+        
         // 2 arguments
         case 3 : {
-
             check_file(argv1, file_name);
             check_print(argv2, print_opt);
 
             break;
         }
 
-        // No more possibility
+        // No more case
         default : {
             usage();
             help();
@@ -147,7 +148,7 @@ void check_file(std::string arg, std::string* file_name) {
             help();
         }
     }
-    // No other possibility
+    // No other case
     else {
         usage();
         help();
@@ -180,7 +181,7 @@ void check_print(std::string arg, bool* print_opt) {
         else
             *print_opt = false;
     }
-    // No other possibility
+    // No other case
     else {
         usage();
         help();
@@ -212,7 +213,7 @@ void check_all(std::string arg, bool* all_opt) {
         else
             *all_opt = false;
     }
-    // No other possibility
+    // No other case
     else {
         usage();
         help();

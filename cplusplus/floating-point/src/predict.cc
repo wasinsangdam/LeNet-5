@@ -132,7 +132,7 @@ void predict(float* input, bool print_opt) {
     /* 2nd fully connected layer */
     full2_layer(relu4_output, full2_output);
 
-    if (print_opt) {
+    if (print_opt) { // If print option is true, print all intermediate results.
         print_3d("CONV1 output", (float*)relu1_output, CONV1_OUTPUT_NUM, CONV1_OUTPUT_ROW, CONV1_OUTPUT_COL, print_opt);
         print_3d("POOL1 output", (float*)pool1_output, POOL1_OUTPUT_NUM, POOL1_OUTPUT_ROW, POOL1_OUTPUT_COL, print_opt);
         

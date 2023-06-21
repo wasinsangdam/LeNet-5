@@ -31,8 +31,6 @@ void print_3d(std::string name, float* array, size_t num, size_t row, size_t col
             for (size_t k = 0; k < col; k++) { 
                 if (array[(i * row * col) + (j * col) + k] > 0.0 ) 
                     printf(ANSI_COLOR_CYAN "%5.2f" ANSI_COLOR_RESET, *(array + (i * row * col) + (j * col) + k));
-                    // printf(ANSI_COLOR_CYAN "%5.2f" ANSI_COLOR_RESET, array[(i * row * col) + (j * col) + k]);
-                    // printf(ANSI_COLOR_CYAN "%s", ANSI_COLOR_RESET, array[(i * row * col) + (j * col) + k].to_string(10));
                 else 
                     printf("%5.2f", *(array + (i * row * col) + (j * col) + k));
             }
