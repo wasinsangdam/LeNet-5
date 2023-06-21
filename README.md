@@ -48,13 +48,13 @@
 * Each directories can be compiled by the command `make`.
 * In most cases, it can be run by the command `./main`.
 * Exceptionally, there are three options for `floating-point` directories.
-  * Run one input
+  * Run just one input.
     * `./main --input=../../data/input_N.data`
     * `./main --i=../../data/input_N.data`
   * Run one input, and print intermediate results.
     * `./main --input=../../data/input_N.data --print=true`
     * `./main --i=../../data/input_N.data -p=true`
-  * Run all (Check accuracy and find Max/Min value of intermediate outputs, weights and biases.)
+  * Run all (Check accuracy and find Max/Min value of intermediate outputs, weights and biases).
     * `./main --all=true`
     * `./main -a=true`
 
