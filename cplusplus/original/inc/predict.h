@@ -8,5 +8,4 @@
 /* Just predict function */
 uint8_t predict(float* input);
 
-
 #endif

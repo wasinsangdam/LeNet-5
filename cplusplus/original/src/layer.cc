@@ -16,7 +16,7 @@ void conv1_layer(float* input,
                     }
                 }
 
-                /* tanh activation & Store */
+                /* tanh activation & Write */
                 output[wn][orow][ocol] = (float)std::tanh(acc);
             }
         }
@@ -42,7 +42,7 @@ void pool1_layer(float  input[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_C
 
                 avg = (float)(avg / 4.0) ; // Caculate average (Average Pooling)
 
-                /* sigmoid activation & Store */
+                /* sigmoid activation & Write */
                 output[num][row >> 1][col >> 1] = sigmoid(avg);
             }
         }
@@ -67,7 +67,7 @@ void conv2_layer(float  input[POOL1_OUTPUT_NUM][POOL1_OUTPUT_ROW][POOL1_OUTPUT_C
                     }
                 }
 
-                /* tanh activation & Store */
+                /* tanh activation & Write */
                 output[wn][orow][ocol] = (float)std::tanh(acc);
             }
         }
@@ -93,7 +93,7 @@ void pool2_layer(float  input[CONV2_OUTPUT_NUM][CONV2_OUTPUT_ROW][CONV2_OUTPUT_C
 
                 avg = (float)(avg / 4.0) ; // Calculate average (Average Pooling)
 
-                /* sigmoid activation & Store */
+                /* sigmoid activation & Write */
                 output[num][row >> 1][col >> 1] = sigmoid(avg);
             }
         }
@@ -116,7 +116,7 @@ void conv3_layer(float  input[POOL2_OUTPUT_NUM][POOL2_OUTPUT_ROW][POOL2_OUTPUT_C
             }
         }
 
-        /* tanh activation & Store */
+        /* tanh activation & Write */
         output[wn] = (float)std::tanh(acc);
     }
 }
@@ -134,7 +134,7 @@ void full1_layer(float  input[CONV3_OUTPUT_SIZE],
             acc += input[col] * full1_weight[row][col];
         }
 
-        /* tanh activation & Store */
+        /* tanh activation & Write */
         output[row] = (float)std::tanh(acc);
     }
 }
@@ -153,7 +153,7 @@ void full2_layer(float  input[FULL2_OUTPUT_SIZE],
             acc += input[col] * full2_weight[row][col];
         }
 
-        /* tanh activation & Store */
+        /* tanh activation & Write */
         output[row] = (float)std::tanh(acc);
     }
 }
