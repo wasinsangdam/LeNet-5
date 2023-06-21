@@ -7,8 +7,6 @@
 #include "parameter.h"
 #include "weight.h"
 
-float sigmoid(float x);
-
 void conv1_layer(float* input, 
                  float  output[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_COL]);
 
@@ -29,6 +27,8 @@ void full1_layer(float  input[CONV3_OUTPUT_SIZE],
 
 void full2_layer(float  input[FULL2_OUTPUT_SIZE], 
                  float output[FULL2_OUTPUT_SIZE]);
+
+float sigmoid(float x);
 
 uint8_t softmax(float input[FULL2_OUTPUT_SIZE]);
 

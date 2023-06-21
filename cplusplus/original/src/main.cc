@@ -14,22 +14,21 @@
 
 /* LeNet-5 Architecture */
 /*
-    [INPUT] -> [       CONV1 + tanh    ] -> 
-   (32 * 32)   [ AVG Pooling + sigmoid ] -> 
-   ( image )   [       CONV2 + tanh    ] -> 
-               [ AVG Pooling + sigmoid ] -> 
-               [       CONV3 + tanh    ] -> 
-               [       FULL1 + tanh    ] ->
-               [       FULL2 + SMax    ] -> [OUTPUT] 
-                                              (1)
-                                        (Predicted number)
+    [INPUT] -> [     CONV1 + tanh    ] -> 
+   (32 * 32)   [ A.Pooling + sigmoid ] -> 
+   ( image )   [     CONV2 + tanh    ] -> 
+               [ A.Pooling + sigmoid ] -> 
+               [     CONV3 + tanh    ] -> 
+               [     FULL1 + tanh    ] ->
+               [     FULL2 + SMax    ] -> [OUTPUT] 
+                                            (1)
+                                     (Predicted number)
 */
 
 int main (int argc, char* argv[]) {
 
     float input_array[IMAGE_SIZE] = { 0, };
 
-    /* Run all test cases */
     int err_cnt = 0;
 
     int answer[TEST_NUM] = { 0, };
@@ -69,5 +68,4 @@ int main (int argc, char* argv[]) {
     std::cout << "Error    : " << std::setw(5) << err_cnt  << " [cases] \n\n";
     
     return 0;
-
 }

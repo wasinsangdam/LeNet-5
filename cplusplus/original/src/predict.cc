@@ -37,5 +37,6 @@ uint8_t predict(float* input) {
     /* 2nd fully connected layer */
     full2_layer(full1_output, full2_output);
 
+    /* Return softmax result */
     return softmax(full2_output);
 }
