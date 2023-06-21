@@ -32,7 +32,6 @@ int main (int argc, char* argv[]) {
 
     stream_axis input_axi_stream;
 
-    /* Run all test cases */
     int err_cnt = 0;
 
     int        answer[TEST_NUM] = { 0, };
