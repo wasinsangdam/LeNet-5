@@ -1,5 +1,7 @@
 # LeNet-5 on ZYBO Z7-10 FPGA
 
+Details are organized in [LeNet-5.pdf](./etc/LeNet-5.pdf).
+
 ## Directories
 `python` 
 * Train the original model and light model.
