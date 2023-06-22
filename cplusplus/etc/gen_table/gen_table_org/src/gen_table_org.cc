@@ -5,20 +5,18 @@
 #include <cstdio>
 #include <string.h>
 
-#include <ap_fixed.h>
+#include "../../../../original/inc/parameter.h"
 
-#include "../../floating-point/inc/parameter.h"
-
-#define CONV1_WEIGHT    "../../../data/weight/conv1_weight.data"
-#define CONV1_BIAS      "../../../data/bias/conv1_bias.data"
-#define CONV2_WEIGHT    "../../../data/weight/conv2_weight.data"
-#define CONV2_BIAS      "../../../data/bias/conv2_bias.data"
-#define CONV3_WEIGHT    "../../../data/weight/conv3_weight.data"
-#define CONV3_BIAS      "../../../data/bias/conv3_bias.data"
-#define FULL1_WEIGHT    "../../../data/weight/full1_weight.data"
-#define FULL1_BIAS      "../../../data/bias/full1_bias.data"
-#define FULL2_WEIGHT    "../../../data/weight/full2_weight.data"
-#define FULL2_BIAS      "../../../data/bias/full2_bias.data"
+#define CONV1_WEIGHT    "../../../../data/origin/weight/conv1_weight.data"
+#define CONV1_BIAS      "../../../../data/origin/bias/conv1_bias.data"
+#define CONV2_WEIGHT    "../../../../data/origin/weight/conv2_weight.data"
+#define CONV2_BIAS      "../../../../data/origin/bias/conv2_bias.data"
+#define CONV3_WEIGHT    "../../../../data/origin/weight/conv3_weight.data"
+#define CONV3_BIAS      "../../../../data/origin/bias/conv3_bias.data"
+#define FULL1_WEIGHT    "../../../../data/origin/weight/full1_weight.data"
+#define FULL1_BIAS      "../../../../data/origin/bias/full1_bias.data"
+#define FULL2_WEIGHT    "../../../../data/origin/weight/full2_weight.data"
+#define FULL2_BIAS      "../../../../data/origin/bias/full2_bias.data"
 
 typedef float data_t;
 
@@ -59,7 +57,7 @@ void gen_table(std::string d_type, std::string name, data_t* array, size_t size)
 
 void gen_table_3d(data_t* weight, std::string name, size_t num, size_t row, size_t col) {
 
-    std::cout << "const data_t " << name;
+    std::cout << "const float " << name;
     printf(" [%ld][%ld][%ld] = \n{ ", num, row, col);
 
     for (size_t i = 0; i < num; i++) {
@@ -87,7 +85,7 @@ void gen_table_3d(data_t* weight, std::string name, size_t num, size_t row, size
 
 void gen_table_4d(data_t* weight, std::string name, size_t num, size_t ch, size_t row, size_t col) {
 
-    std::cout << "const data_t " << name;
+    std::cout << "const float " << name;
     printf(" [%ld][%ld][%ld][%ld] = \n{ ", num, ch, row, col);
 
     for (size_t n = 0; n < num; n++) {
@@ -122,7 +120,7 @@ void gen_table_4d(data_t* weight, std::string name, size_t num, size_t ch, size_
 
 void gen_table_2d(data_t* weight, std::string name, size_t row, size_t col) {
     
-    std::cout << "const data_t " << name;
+    std::cout << "const float " << name;
     printf(" [%ld][%ld] = \n{ ", row, col);
 
     for (size_t i = 0; i < row; i++) {
@@ -174,20 +172,7 @@ int main (void) {
 
     read_data(FULL2_WEIGHT, full2_weight, FULL2_WEIGHT_SIZE);
     read_data(FULL2_BIAS  , full2_bias  , FULL2_BIAS_SIZE);
-
-    // gen_table("data_t", "conv1_weight", conv1_weight, CONV1_WEIGHT_SIZE);
-    // gen_table("data_t", "conv2_weight", conv2_weight, CONV2_WEIGHT_SIZE);
-    // gen_table("data_t", "conv3_weight", conv3_weight, CONV3_WEIGHT_SIZE);
-
-    // gen_table("data_t", "full1_weight", full1_weight, FULL1_WEIGHT_SIZE);
-    // gen_table("data_t", "full2_weight", full2_weight, FULL2_WEIGHT_SIZE);
-
-    // gen_table("data_t", "conv1_bias", conv1_bias, CONV1_BIAS_SIZE);
-    // gen_table("data_t", "conv2_bias", conv2_bias, CONV2_BIAS_SIZE);
-    // gen_table("data_t", "conv3_bias", conv3_bias, CONV3_BIAS_SIZE);
-
-    // gen_table("data_t", "full1_bias", full1_bias, FULL1_BIAS_SIZE);
-    // gen_table("data_t", "full2_bias", full2_bias, FULL2_BIAS_SIZE);
+    
 
     gen_table_3d(conv1_weight, "conv1_weight", CONV1_WEIGHT_NUM, WEIGHT_ROW, WEIGHT_COL);
     gen_table_4d(conv2_weight, "conv2_weight", CONV2_WEIGHT_NUM, CONV2_WEIGHT_CH, WEIGHT_ROW, WEIGHT_COL);
@@ -196,25 +181,11 @@ int main (void) {
     gen_table_2d(full1_weight, "full1_weight", FULL1_WEIGHT_ROW, FULL1_WEIGHT_COL);
     gen_table_2d(full2_weight, "full2_weight", FULL2_WEIGHT_ROW, FULL2_WEIGHT_COL);
 
-    
-   //  typedef ap_fixed<16, 2, AP_RND, AP_SAT> weight_t;
-    
-   //  for (size_t n = 0; n < CONV2_WEIGHT_NUM; n++) {
-   //      for (size_t ch = 0; ch < CONV2_WEIGHT_CH; ch++) {
-   //          for (size_t i = 0; i < WEIGHT_ROW; i++) {
-   //              for (size_t j = 0; j < WEIGHT_COL; j++) {
-   //                  weight_t temp;
-   //                  temp = (weight_t)conv2_weight_4d[n][ch][i][j];
+    gen_table("float", "conv1_bias", conv1_bias, CONV1_BIAS_SIZE);
+    gen_table("float", "conv2_bias", conv2_bias, CONV2_BIAS_SIZE);
+    gen_table("float", "conv3_bias", conv3_bias, CONV3_BIAS_SIZE);
 
-   //                  std::cout << temp << " ";
-   //              }
-   //              std::cout << "\n";
-   //          }
-   //          std::cout << "\n";
-   //      }
-   //      std::cout << "\n";
-   //  }
-   //  std::cout << "\n";
-
+    gen_table("float", "full1_bias", full1_bias, FULL1_BIAS_SIZE);
+    gen_table("float", "full2_bias", full2_bias, FULL2_BIAS_SIZE);
 
 }

@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <iomanip>
 
-#include "../../floating-point/inc/weight.h"
-#include "../../floating-point/inc/parameter.h"
+#include "../../../floating-point/inc/weight.h"
+#include "../../../floating-point/inc/parameter.h"
 
 
 /* Data from ../floating-point/ directory, ./main --all=true commmand */

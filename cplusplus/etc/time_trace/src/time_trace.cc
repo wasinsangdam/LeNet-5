@@ -18,22 +18,19 @@ using namespace std;
 #define RESULT_NUM 5
 
 #if     RESULT_NUM == 1
-    #define RESULT_FILE "result_1.txt"
+    #define RESULT_FILE "./result/result_1.txt"
 
 #elif   RESULT_NUM == 2
-    #define RESULT_FILE "result_2.txt"
+    #define RESULT_FILE "./result/result_2.txt"
 
 #elif   RESULT_NUM == 4
-    #define RESULT_FILE "result_4.txt"
+    #define RESULT_FILE "./result/result_4.txt"
 
 #elif   RESULT_NUM == 5
-    #define RESULT_FILE "result_5.txt"
+    #define RESULT_FILE "./result/result_5.txt"
 
 #elif   RESULT_NUM == 8
-    #define RESULT_FILE "result_8.txt"
-
-#elif   RESULT_NUM == 16
-    #define RESULT_FILE "result_16.txt"
+    #define RESULT_FILE "./result/result_8.txt"
 #endif
 
 int get_time(string line, int pos) {
@@ -111,20 +108,22 @@ bool compare(pair<string, int> &a, pair<string, int> &b ){
 
 void print(vector<pair<string, int>> &vector) {
 
+    cout << "[ Time Trace (sorted)]\n";
+
     for (auto v : vector) {
         if (v.first.find("DMA") != string::npos) 
             cout << YELLOW "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else if (v.first.find("ACC") != string::npos) 
-            cout << CYAN"[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
+            cout <<  CYAN  "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else if (v.first.find("ITR") != string::npos) continue;
             // cout << MAGENTA   "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
         else 
             cout << "[" << setw(12) << v.first << ", " << setw(8) << v.second << "]" RESET << "\n";
     }
+    cout << "\n";
 
     std::vector<pair<string, int>> acc;
     std::vector<pair<string, int>> dma;
-
 
     for (auto v : vector) {
         if (v.first.find("START_DMA_") != string::npos) {
@@ -147,7 +146,7 @@ void print(vector<pair<string, int>> &vector) {
             }
             dma.push_back(make_pair(str, latency));
         }
-        else if (v.first.find("START_ACC_") != string::npos) {
+        else if (v.first.find("START_ACC_0") != string::npos) {
 
             int  length = v.first.length();
             char number = v.first.at(length - 1);
@@ -169,15 +168,42 @@ void print(vector<pair<string, int>> &vector) {
 
             acc.push_back(make_pair(str, latency));
         }
+        else if (v.first.find("END_ACC_") != string::npos) {
+
+            if (v.first.find("END_ACC_0") != string::npos) continue;
+
+            int length = v.first.length();
+            char number = v.first.at(length - 1);
+            int latency = 0;
+
+            string find_str = "END_ACC_";
+            find_str += (number - 1);
+
+            string str = "ACC_";
+            str += number;
+
+            for (auto vv : vector) {
+                if (vv.first.find(find_str) != string::npos) {
+                    latency = v.second - vv.second;
+                }
+                else continue;
+            }
+
+            acc.push_back(make_pair(str, latency));
+
+        }
+        
         else continue;
     }
 
+    cout << "[DMA latency]\n";
     for (auto d : dma) {
         cout << d.first << " : " << d.second << "\n";
     }
 
     cout << "\n";
 
+    cout << "[ACC latency]\n";
     for (auto a : acc) {
         cout << a.first << " : " << a.second << "\n";
     }

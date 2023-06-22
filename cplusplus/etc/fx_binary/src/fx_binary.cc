@@ -7,7 +7,7 @@
 
 #include <ap_fixed.h>
 
-typedef  ap_ufixed<16,  1, AP_RND_INF, AP_SAT>  input_t;
+typedef ap_ufixed<16, 1, AP_RND, AP_SAT> input_t;
 
 #define NUM         10000
 #define IMAGE_SIZE  32 *32
@@ -101,30 +101,6 @@ void read_data_bin(string file_name, uint16_t* array, size_t size) {
 }
 
 
-
-uint16_t bin2dec(input_t x) {
-
-    string binary = x.to_string();
-    
-    binary.erase(0, 2);
-    binary.erase(remove(binary.begin(), binary.end(), '.'), binary.end());
-
-    if (binary.size() != 16 && binary != "0")
-        binary = "1000000000000000";
-
-    uint16_t decimal = 0;
-    int power = 0;
-
-    for (int i = binary.length() - 1; i >= 0; --i) {
-        if (binary[i] == '1') {
-            decimal += pow(2, power);
-        }
-        ++power;
-    }
-
-    return decimal;
-}
-
 int main (void) {
 
 
@@ -152,7 +128,7 @@ int main (void) {
 
     for (size_t i = 0; i < NUM; i++) {
         for (size_t j = 0; j < IMAGE_SIZE; j++) {
-            output[i][j] = bin2dec(input[i][j]);
+            output[i][j] = input[i][j].range();
         }
     }
     
@@ -162,14 +138,6 @@ int main (void) {
 
         write_data_bin(file, output[i], IMAGE_SIZE);
     }
-
-    // uint16_t test[IMAGE_SIZE];
-    // read_data_bin(dir2 + "1" + ext2, test, IMAGE_SIZE);
-
-    // for (size_t i = 0; i < IMAGE_SIZE; i++) {
-    //     cout << setw(6) <<test[i] << " ";
-    //     if (i % 32 == 31) cout << "\n";
-    // }
 
     int answer[NUM] = { 0, };
 

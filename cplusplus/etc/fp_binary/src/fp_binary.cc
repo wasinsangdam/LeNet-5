@@ -45,7 +45,7 @@ int main (void) {
         input[i] = new float[IMAGE_SIZE];
     }
 
-    string dir_input = "../../../data/input/input_";
+    string dir_input  = "../../../data/input/input_";
     string dir_output = "../../../data/input_fp_bin/fp_";
 
     string ext_input = ".data";
