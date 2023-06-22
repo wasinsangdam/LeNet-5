@@ -85,7 +85,6 @@
 
 ## Performance (ARM core vs. predict IP)
 <img src="/etc/Performance.jpg">
-
 * Predict IP on PL is __40.34x__ faster than Original with __-O0__ compile option on PS.
 * Predict IP on PL is __7.38x__ faster than Original with __-O2__ compile option on PS.
 * Predict IP on PL is __16.01x__ faster than Lite with __-O0__ compile option on PS.
