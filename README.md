@@ -59,10 +59,10 @@ Details are organized in [LeNet-5.pdf](./etc/LeNet-5.pdf).
 * Exceptionally, there are three options for `floating-point` directories.
   * Run just one input.
     * `./main --input=../../data/input_N.data`
-    * `./main --i=../../data/input_N.data`
+    * `./main -i=../../data/input_N.data`
   * Run one input, and print intermediate results.
     * `./main --input=../../data/input_N.data --print=true`
-    * `./main --i=../../data/input_N.data -p=true`
+    * `./main -i=../../data/input_N.data -p=true`
   * Run all (Check accuracy and find Max/Min value of intermediate outputs, weights and biases).
     * `./main --all=true`
     * `./main -a=true`
