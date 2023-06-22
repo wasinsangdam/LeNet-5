@@ -76,7 +76,7 @@
 ---
 
 ## Overview of HW Design & SW Driver
-<img src="/etc/Design.png">
+<img src="/etc/Design.jpeg">
 
 * Initialize AXI DMA IP and predict IP through `dmaInit()` and `predictInit()`.
 * Flush the cache before transferring data via DMA through `cacheFlush()`.
