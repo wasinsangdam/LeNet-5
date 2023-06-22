@@ -8,6 +8,12 @@
 !*.ipynb
 !Makefile
 
+!data/input/
+!data/input_fp_bin
+!data/input_fx_bin
+!data/lite
+!data/origin
+
 *.data
 *.bin
 .vscode
