@@ -1,5 +1,5 @@
-#ifndef __PARSE2_H__
-#define __PARSE2_H__
+#ifndef __PARSE_H__
+#define __PARSE_H__
 
 #include <string>
 #include <iostream>

@@ -37,10 +37,11 @@
 * `LeNet-5.pdf` : Presentation pdf file that summarizes the content of this LeNet-5 project.
 
 ---
+
 ### Usage
 
 `python`
-* Tensorflow must be installed in advance.
+* Tensorflow (2.10.0) must be installed in advance.
 * Since the extension of the file is `*.ipynb`, if you use vscode, it is recommended to install `Jupyter` extension.
 * If you run all the `*.ipynb` files, `/data` folder will be generated.
 
