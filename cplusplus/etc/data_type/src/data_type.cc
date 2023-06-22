@@ -87,25 +87,25 @@ int main (void) {
     int full1_bias_int = fx_integer(max_full1_bias, min_full1_bias);
     int full2_bias_int = fx_integer(max_full2_bias, min_full2_bias);
 
-    cout << "[CONV1_OUTPUT] integer part : " << conv1_output_int << "\n"; 
-    cout << "[CONV2_OUTPUT] integer part : " << conv2_output_int << "\n"; 
-    cout << "[CONV3_OUTPUT] integer part : " << conv3_output_int << "\n"; 
-    cout << "[FULL1_OUTPUT] integer part : " << full1_output_int << "\n"; 
-    cout << "[FULL2_OUTPUT] integer part : " << full2_output_int << "\n";
+    cout << "[CONV1_OUTPUT] Integer part : " << conv1_output_int << "\n"; 
+    cout << "[CONV2_OUTPUT] Integer part : " << conv2_output_int << "\n"; 
+    cout << "[CONV3_OUTPUT] Integer part : " << conv3_output_int << "\n"; 
+    cout << "[FULL1_OUTPUT] Integer part : " << full1_output_int << "\n"; 
+    cout << "[FULL2_OUTPUT] Integer part : " << full2_output_int << "\n";
     cout << "\n";
 
-    cout << "[CONV1_WEIGHT] integer part : " << conv1_weight_int << "\n"; 
-    cout << "[CONV2_WEIGHT] integer part : " << conv2_weight_int << "\n"; 
-    cout << "[CONV3_WEIGHT] integer part : " << conv3_weight_int << "\n"; 
-    cout << "[FULL1_WEIGHT] integer part : " << full1_weight_int << "\n"; 
-    cout << "[FULL2_WEIGHT] integer part : " << full2_weight_int << "\n";
+    cout << "[CONV1_WEIGHT] Integer part : " << conv1_weight_int << "\n"; 
+    cout << "[CONV2_WEIGHT] Integer part : " << conv2_weight_int << "\n"; 
+    cout << "[CONV3_WEIGHT] Integer part : " << conv3_weight_int << "\n"; 
+    cout << "[FULL1_WEIGHT] Integer part : " << full1_weight_int << "\n"; 
+    cout << "[FULL2_WEIGHT] Integer part : " << full2_weight_int << "\n";
     cout << "\n";
 
-    cout << "[CONV1_BIAS]   integer part : " << conv1_bias_int << "\n"; 
-    cout << "[CONV2_BIAS]   integer part : " << conv2_bias_int << "\n"; 
-    cout << "[CONV3_BIAS]   integer part : " << conv3_bias_int << "\n"; 
-    cout << "[FULL1_BIAS]   integer part : " << full1_bias_int << "\n"; 
-    cout << "[FULL2_BIAS]   integer part : " << full2_bias_int << "\n";
+    cout << "[CONV1_BIAS]   Integer part : " << conv1_bias_int << "\n"; 
+    cout << "[CONV2_BIAS]   Integer part : " << conv2_bias_int << "\n"; 
+    cout << "[CONV3_BIAS]   Integer part : " << conv3_bias_int << "\n"; 
+    cout << "[FULL1_BIAS]   Integer part : " << full1_bias_int << "\n"; 
+    cout << "[FULL2_BIAS]   Integer part : " << full2_bias_int << "\n";
     cout << "\n";
 
 }
