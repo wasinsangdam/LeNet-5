@@ -13,7 +13,7 @@
 #include "xpredict_hw.h"
 
 #include "sdCard.h"
-#include "reference.h"
+#include "lite.h"
 #include "origin.h"
 
 #define __HW
@@ -74,7 +74,6 @@ int runAccel(u16* inputAddr, int inputSizeOne);
 
 #endif
 
-
 #define NUM_TESTS   4
 
 #ifndef IMAGE_SIZE
@@ -82,8 +81,6 @@ int runAccel(u16* inputAddr, int inputSizeOne);
 #endif
 
 #define ANSWER_NUM  10000
-
-
 
 int main (void) {
 
@@ -93,7 +90,6 @@ int main (void) {
     int answer[ANSWER_NUM] = { 0, };
 
     /* Dynamic allocation of input and output array */
-
     #ifdef __HW
     
     u16** inputFixed;
@@ -109,8 +105,6 @@ int main (void) {
     outputHw  = new u8[NUM_TESTS];
     timeTable = new time[NUM_TESTS];
 
-
-
     #elif defined __SW
     float** inputFloat;
     inputFloat = new float*[NUM_TESTS];
@@ -122,7 +116,6 @@ int main (void) {
     u8* outputSw;
 
     outputSw  = new u8[NUM_TESTS];
-
 
     #elif defined __ORG
     float** inputFloat;
@@ -138,7 +131,6 @@ int main (void) {
 
     #endif
     
-
 
     #ifdef __HW
     /* Read fixed data in SD card */
@@ -177,7 +169,6 @@ int main (void) {
     
 
     /* DMA Controller Setup */
-
     #ifdef __HW
     status = initDma();
     if (status != XST_SUCCESS) {
@@ -233,7 +224,6 @@ int main (void) {
 
 
     /* LeNet-5 in HW Accelerator */
-
     #ifdef __HW
     status = predictSetup(inputFixed, inputFixedSize);
     if (status != XST_SUCCESS) {
@@ -276,7 +266,6 @@ int main (void) {
     
 
     /* Performance Chcek */
-
     #ifdef __HW
 
     for (int i = 0; i < NUM_TESTS; i++) {
@@ -307,6 +296,7 @@ int main (void) {
         printf("[INFO] %2d iter HW Acc run time : %10lu cycles. \r\n", i, timeTable[i].hwCycle);
         printf("[INFO] %2d iter Intr   run time : %10lu cycles. \r\n", i, timeTable[i].intrCycle);
     }
+
     printf("---------------------------------------------------\r\n"); 
 
     printf("---------------------------------------------------\r\n"); 
@@ -321,14 +311,10 @@ int main (void) {
 
         printf("[INFO] %2d Intr   Start point : %10lu\r\n", i, timeTable[i].intrStart);
         printf("[INFO] %2d Intr   End   point : %10lu\r\n", i, timeTable[i].intrEnd);
-
     }
 
     printf("[INFO] End point             : %10lu\r\n", totalEndTime);
-    
     printf("---------------------------------------------------\r\n"); 
-
-    
 
     
     #elif defined __SW
@@ -347,7 +333,6 @@ int main (void) {
     
 
     /* Accuracy Chcek */
-
     #ifdef __HW
     int errHw = 0;
 
@@ -383,10 +368,8 @@ int main (void) {
     
     #endif
     
-    
 
     /* Deallocation */
-
     #ifdef __HW
     for (int i = 0; i < NUM_TESTS; i++) {
         delete[] inputFixed[i];
@@ -412,11 +395,9 @@ int main (void) {
 
     #endif
     
-
     printf("----------- LeNet-5 End -----------\r\n");
 
     return XST_SUCCESS;
-
 }
 
 #ifdef __HW 
@@ -444,9 +425,6 @@ int initDma() {
 
     XAxiDma_IntrDisable(&dmaInst, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
     XAxiDma_IntrDisable(&dmaInst, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
-
-    // XAxiDma_Reset(&dmaInst);
-    // while (!XAxiDma_ResetIsDone(&dmaInst)) {}
 
     return XST_SUCCESS;
 }

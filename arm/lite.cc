@@ -1,4 +1,4 @@
-#include "reference.h"
+#include "lite.h"
 
 void predict_ref(float* input, u8* output) {
 
