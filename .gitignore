@@ -8,6 +8,7 @@
 !*.ipynb
 !Makefile
 
+!data
 !data/input/
 !data/input_fp_bin
 !data/input_fx_bin
