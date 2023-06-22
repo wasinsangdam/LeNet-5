@@ -83,3 +83,10 @@
 * AXI DMA IP reads data through DDR and transfers it to predict IP through `dataTx()`.
 * Wait for the preidct IP to process, and read the result when interrupt signal is raised.
 
+## Performance (ARM core vs. predict IP)
+<img src="/etc/Performance.jpg>
+
+* Predict IP on PL is __40.34x__ faster than Original with __-O0__ compile option on PS.
+* Predict IP on PL is __7.38x__ faster than Original with __-O2__ compile option on PS.
+* Predict IP on PL is __16.01x__ faster than Lite with __-O0__ compile option on PS.
+* Predict IP on PL is __1.57x__ faster than Lite with __-O3__ compile option on PS.
