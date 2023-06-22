@@ -75,7 +75,7 @@ Details are organized in [LeNet-5.pdf](./etc/LeNet-5.pdf).
 * The AXI DMA provides high-speed data movement between system memory and an AXI4-Stream based target IP.
 * The Integrated Logic Analyzer (ILA) IP core is logic analyzer core that can be used to monitor the internal signals of a design.
 * The AXI Timer provides an AXI4-Lite interface to communicate with the PS (Processing System).
-* Interrupt is driven when the `ap_done` or `ap_ready` block level interface signals are active High.
+* Interrupt is driven when the `ap_done` block level interface signals are active High.
 ---
 
 ## Overview of HW Design & SW Driver
