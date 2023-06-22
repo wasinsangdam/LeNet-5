@@ -1,16 +1,18 @@
 # LeNet-5 on ZYBO Z7-10 FPGA
----
-### Directories
+
+## Directories
 `python` 
 * Train the original model and light model.
 * Get the data from trained model such as weights and biases.
 * Get the input data to be tested and the answer.
+---
 
 `data`
 * Created by `/python/*_training.ipynb` and `/python/get_data_*.ipynb`.
 * Trained weights and biases are stored as text. (`*.data`)
 * Weights and biases for original model are in `/data/origin`.
 * Weights and biases for light model are in `/data/lite`.
+---
 
 `cplusplus`
 * Implemented according to each model and data type.
@@ -20,17 +22,19 @@
 * `hls-stream` : Light model with `hls::stream` data type. 
 * `hls-parallel` : Partially parallel model with `hls::stream` data type.
 * `etc` : Analyze result, save input txt file as a binary, determine number of fixed point interger part, or generate weight array.
+---
 
 `hls`
 * `dtype` : Compare floating point and fixed point in terms of latency, resource, max frequency through simple function.
 * `predict` : Partially parallel model that can be synthesized with HLS, that the top function name is `predict`.
+---
 
 `arm`
 * SW driver code that read input, check accuracy, measure latency.
 * Read input binary file through SD card.
 * Run 10,000 cases to measure accuracy.
-* Use the AXI Timer IP on the PL(Programmable Logic) side to measure the latency.
-
+* Use the AXI Timer IP on the PL (Programmable Logic) side to measure the latency.
+---
 `etc`
 * `waveform` : Waveform obtained through Integrated Logic Analyzer (ILA).
 * `BlockDesign.pdf` : Block design of programmable logic.
@@ -38,12 +42,13 @@
 
 ---
 
-### Usage
+## Usage
 
 `python`
 * Tensorflow (2.10.0) must be installed in advance.
 * Since the extension of the file is `*.ipynb`, if you use vscode, it is recommended to install `Jupyter` extension.
 * If you run all the `*.ipynb` files, `/data` folder will be generated.
+---
 
 `cplusplus`
 * Each directories can be compiled by the command `make`.
@@ -61,7 +66,20 @@
 
 ---
 
-### Block Design 
+## Block Design 
 <img src="/etc/BlockDesign.png">
 
+* The AXI DMA provides high-speed data movement between system memory and an AXI4-Stream based target IP.
+* The Integrated Logic Analyzer (ILA) IP core is logic analyzer core that can be used to monitor the internal signals of a design.
+* The AXI Timer provides an AXI4-Lite interface to communicate with the PS (Processing System).
+* Interrupt is driven when the `ap_done` or `ap_ready` block level interface signals are active High.
+---
+
+## Overview of HW Design & SW Driver
+<img src="/etc/Design.png">
+
+* Initialize AXI DMA IP and predict IP through `dmaInit()` and `predictInit()`.
+* Flush the cache before transferring data via DMA through `cacheFlush()`.
+* AXI DMA IP reads data through DDR and transfers it to predict IP through `dataTx()`.
+* Wait for the preidct IP to process, and read the result when interrupt signal is raised.
 
