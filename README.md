@@ -35,6 +35,7 @@
 * Run 10,000 cases to measure accuracy.
 * Use the AXI Timer IP on the PL (Programmable Logic) side to measure the latency.
 ---
+
 `etc`
 * `waveform` : Waveform obtained through Integrated Logic Analyzer (ILA).
 * `BlockDesign.pdf` : Block design of programmable logic.
