@@ -15,7 +15,7 @@
 
 using namespace std;
 
-#define RESULT_NUM 5
+#define RESULT_NUM 8
 
 #if     RESULT_NUM == 1
     #define RESULT_FILE "./result/result_1.txt"
@@ -108,7 +108,7 @@ bool compare(pair<string, int> &a, pair<string, int> &b ){
 
 void print(vector<pair<string, int>> &vector) {
 
-    cout << "[ Time Trace (sorted)]\n";
+    cout << "[  Time Trace (sorted) ]\n";
 
     for (auto v : vector) {
         if (v.first.find("DMA") != string::npos) 

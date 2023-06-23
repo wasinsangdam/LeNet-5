@@ -124,9 +124,9 @@ void pool1_layer(stream_conv1  &input0, stream_conv1  &input1, stream_conv1  &in
     conv1_t input_3d[CONV1_OUTPUT_NUM][CONV1_OUTPUT_ROW][CONV1_OUTPUT_COL] = { 0, };
     
     /* Read input */
-    for (int k = 0; k < CONV1_OUTPUT_NUM; k++) {
-        for (int i = 0; i < CONV1_OUTPUT_ROW; i++) {
-            for (int j = 0; j < CONV1_OUTPUT_COL; j++) {
+    for (int i = 0; i < CONV1_OUTPUT_ROW; i++) {
+        for (int j = 0; j < CONV1_OUTPUT_COL; j++) {
+            for (int k = 0; k < CONV1_OUTPUT_NUM; k++) {
                 if      (k == 0) input_3d[k][i][j] = input0.read();
                 else if (k == 1) input_3d[k][i][j] = input1.read();
                 else             input_3d[k][i][j] = input2.read();
@@ -396,9 +396,9 @@ void pool2_layer(stream_conv2 &input0,
     conv2_t input_3d[CONV2_OUTPUT_NUM][CONV2_OUTPUT_ROW][CONV2_OUTPUT_COL] = { 0, };
 
     /* Read input */
-    for (int k = 0; k < CONV2_OUTPUT_NUM; k++) {
-        for (int i = 0; i < CONV2_OUTPUT_ROW; i++) {
-            for (int j = 0; j < CONV2_OUTPUT_COL; j++) {
+    for (int i = 0; i < CONV2_OUTPUT_ROW; i++) {
+        for (int j = 0; j < CONV2_OUTPUT_COL; j++) {
+            for (int k = 0; k < CONV2_OUTPUT_NUM; k++) {
                 if      (k == 0) input_3d[k][i][j] = input0.read();
                 else if (k == 1) input_3d[k][i][j] = input1.read();
                 else if (k == 2) input_3d[k][i][j] = input2.read();
