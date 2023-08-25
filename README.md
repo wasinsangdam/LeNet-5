@@ -93,3 +93,6 @@ Details are organized in [LeNet-5.pdf](./etc/LeNet-5.pdf).
 * Predict IP on PL is __7.38x__ faster than Original with __-O2__ compile option on PS.
 * Predict IP on PL is __16.01x__ faster than Lite with __-O0__ compile option on PS.
 * Predict IP on PL is __1.57x__ faster than Lite with __-O3__ compile option on PS.
+
+## Issue
+* SDK issue [Closed] [Issue #1](https://github.com/wasinsangdam/LeNet-5/issues/1)
